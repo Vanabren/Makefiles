@@ -8,22 +8,22 @@
 ##
 
 
-CC = g++ # Compiler is g++
-CFLAGS = -g -Wall -Wextra # Flags : -g (
+CC = g++  # Compiler is g++
+CFLAGS = -g -Wall -Wextra # Flags : -g (Compil
 
-default: Employee
+default: employee
 
-Employee:	Employee.o Officer.o Supervisor.o
+employee:	Employee.o Supervisor.o Officer.o main.o
 	$(CC) $(CFLAGS) -o Employee Employee.o Supervisor.o Officer.o main.o
 
 Employee.o:	Employee.cpp Employee.h
 	$(CC) $(CFLAGS) -c Employee.cpp
 
-Supervisor.o:	Supervisor.cpp Supervisor.o
-	$(CC) $(CLFAGS) -c Supervisor.cpp
+Supervisor.o:	Supervisor.cpp Supervisor.h
+	$(CC) $(CFLAGS) -c Supervisor.cpp
 
-Officer.o:	Officer.cpp Officer.o
-	$(CC) $(CFLAGS) -c Officer.o
+Officer.o:	Officer.cpp Officer.h
+	$(CC) $(CFLAGS) -c Officer.cpp
 
 main.o:	main.cpp Employee.h Supervisor.h Officer.h
 	$(CC) $(CFLAGS) -c main.cpp
