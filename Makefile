@@ -12,6 +12,8 @@ CC = g++  # Compiler is g++
 TARGET = employee # target executable name
 CFLAGS = -g -c -Wall -Wextra # Compilation settings / flags
 
+default: employee
+
 all: $(TARGET)
 
 $(TARGET):	Employee.o Supervisor.o Officer.o main.o # Links all necessary .o files to create target executable
